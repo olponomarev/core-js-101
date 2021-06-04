@@ -349,9 +349,43 @@ function getDigitalRoot(num) {
  *   '{[(<{[]}>)]}' = true
  */
 function isBracketsBalanced(/* str */) {
+//   let leftpar = 0;
+//   let rightpar = 0;
+//   let leftbrace = 0;
+//   let rightbrace = 0;
+//   let leftcurl = 0;
+//   let rightcurl = 0;
+//   let greaterthan = 0;
+//   let lessthan = 0;
+
+  //   for (let index = 0; index < str.length; index += 1) {
+  //     if (str[index] === '(') {
+  //       leftpar += 1;
+  //     } else if (str[index] === ')') {
+  //       rightpar += 1;
+  //     } else if (str[index] === '[') {
+  //       leftbrace += 1;
+  //     } else if (str[index] === ']') {
+  //       rightbrace += 1;
+  //     } else if (str[index] === '{') {
+  //       leftcurl += 1;
+  //     } else if (str[index] === '}') {
+  //       rightcurl += 1;
+  //     } else if (str[index] === '<') {
+  //       lessthan += 1;
+  //     } else if (str[index] === '>') {
+  //       greaterthan += 1;
+  //     }
+  //   }
+  //   if (leftcurl === rightcurl && leftbrace === rightbrace
+  //     && leftpar === rightpar && lessthan === greaterthan) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
+
   throw new Error('Not implemented');
 }
-
 
 /**
  * Returns the string with n-ary (binary, ternary, etc, where n <= 10)
@@ -413,8 +447,19 @@ function getCommonDirectoryPath(/* pathes */) {
  *                         [ 6 ]]
  *
  */
-function getMatrixProduct(/* m1, m2 */) {
-  throw new Error('Not implemented');
+function getMatrixProduct(m1, m2) {
+  const result = [];
+  for (let i = 0; i < m1.length; i += 1) {
+    result[i] = [];
+    for (let j = 0; j < m2[0].length; j += 1) {
+      let sum = 0;
+      for (let k = 0; k < m1[0].length; k += 1) {
+        sum += m1[i][k] * m2[k][j];
+      }
+      result[i][j] = sum;
+    }
+  }
+  return result;
 }
 
 
